@@ -1,4 +1,5 @@
 import Head from "next/head";
+import Link from "next/link";
 
 export default function Home() {
   return (
@@ -9,8 +10,29 @@ export default function Home() {
       </Head>
 
       <main>
+        <ul>
+          <li>
+            <Link href="/">
+              <a>Home</a>
+            </Link>
+          </li>
+          <li>
+            <Link href="/blog/[slug]" as="/blog/hello-world">
+              <a>To Hello World Blog post</a>
+            </Link>
+          </li>
+          <li>
+            <Link href="/about">
+              <a>About Us</a>
+            </Link>
+          </li>
+        </ul>
+
         <h1 className="title">
-          Learn <a href="https://nextjs.org">Next.js!</a>
+          Read
+          <Link href="/posts/first-post">
+            <a>this page!</a>
+          </Link>
         </h1>
 
         <p className="description">
@@ -54,7 +76,7 @@ export default function Home() {
           target="_blank"
           rel="noopener noreferrer"
         >
-          Powered by{" "}
+          Powered by
           <img src="/vercel.svg" alt="Vercel Logo" className="logo" />
         </a>
       </footer>
