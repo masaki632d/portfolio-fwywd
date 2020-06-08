@@ -25,7 +25,7 @@ const styles = {
   `,
 };
 
-const Skill: FC = () => {
+export default function Qualification() {
   const canList = [
     "サイト情報設計",
     "ディレクション・スケジュール管理",
@@ -237,4 +237,4 @@ const Skill: FC = () => {
       </main>
     </div>
   );
-};
+}
