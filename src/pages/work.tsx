@@ -31,37 +31,39 @@ const sessionContents = [
   },
 ];
 
-export default function work() (
-    <>
-      <Head>
-        <title>work</title>
-      </Head>
+const work: FC = () => (
+  <>
+    <Head>
+      <title>work</title>
+    </Head>
 
-      <main css={mainBox}>
-        <section>
-          <MainTitle text={"Work"} />
-          <DefinitionContents dlContents={workContents} />
-        </section>
-        <section>
-          <MainTitle text={"Session"} />
-          <EmbedContents textContents={sessionContents} />
-        </section>
-        <section>
-          <MainTitle text={"Other"} />
-          <div css={buttonBox}>
-            <BasicButton
-              text={"Qiita"}
-              href={"https://qiita.com/masaki632d"}
-              target={"_blank"}
-            />
-            <BasicButton
-              text={"github"}
-              href={"https://github.com/masaki632d"}
-              target={"_blank"}
-            />
-          </div>
-        </section>
-      </main>
-      <GlobalMenus />
-    </>
-  )
+    <main css={mainBox}>
+      <section>
+        <MainTitle text={"Work"} />
+        <DefinitionContents dlContents={workContents} />
+      </section>
+      <section>
+        <MainTitle text={"Session"} />
+        <EmbedContents textContents={sessionContents} />
+      </section>
+      <section>
+        <MainTitle text={"Other"} />
+        <div>
+          <BasicButton
+            text={"Qiita"}
+            href={"https://qiita.com/masaki632d"}
+            target={"_blank"}
+          />
+          <BasicButton
+            text={"github"}
+            href={"https://github.com/masaki632d"}
+            target={"_blank"}
+          />
+        </div>
+      </section>
+    </main>
+    <GlobalMenus />
+  </>
+);
+
+export default work;
