@@ -1,6 +1,6 @@
 /* @jsx jsx */
 import React, { FC } from "react";
-import Link from "next/Link";
+import Link from "next/link";
 import { css, jsx } from "@emotion/core";
 
 const styles = {
