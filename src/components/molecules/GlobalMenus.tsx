@@ -17,7 +17,7 @@ const GlobalMenus: FC = () => {
     // { title: "Study", href: "/study" },
     { title: "useState", href: "/useState" },
     { title: "useEffect", href: "/useEffect" },
-    { title: "useContext", href: "/useContext" },
+    // { title: "useContext", href: "/useContext" },
     { title: "useReducer", href: "/useReducer" },
     { title: "useMemo", href: "/useMemo" },
     { title: "useCallback", href: "/useCallback" },
