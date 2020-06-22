@@ -7,6 +7,9 @@ import TextContentsAria from "../components/organisms/TextContentsAria";
 import GlobalMenus from "../components/molecules/GlobalMenus";
 import BasicButton from "../components/atoms/BasicButton";
 
+import Link from "next/link";
+import Counter from "../components/Counter";
+
 const styles = {
   title: css`
     color: #3da9fc;
@@ -17,6 +20,15 @@ const styles = {
   contentsBox: css`
     background-color: #f1f1f1;
     padding: 30px;
+  `,
+
+  reduxBox: css`
+    background-color: #ccc;
+    margin-top: 20px;
+    padding: 30px;
+    h2 {
+      margin-bottom: 20px;
+    }
   `,
 };
 
@@ -37,6 +49,17 @@ export default function About() {
       <Head>
         <title>about</title>
       </Head>
+
+      <div css={styles.reduxBox}>
+        {/* Redux */}
+        <h2>Redux練習</h2>
+        <Counter />
+        <br />
+
+        <Link href="/about">
+          <a>About Page</a>
+        </Link>
+      </div>
 
       <h1>
         <a href="/" css={styles.title}>
