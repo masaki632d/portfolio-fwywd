@@ -8,12 +8,18 @@ import GlobalMenus from "../components/molecules/GlobalMenus";
 import BasicButton from "../components/atoms/BasicButton";
 
 import Link from "next/link";
-import Counter from "../components/Counter";
+
+// import { useSelector, useDispatch } from "react-redux";
+// import { NewNote } from "../ducks/NewNote";
+// import { NotesState } from "../ducks/NewNote/reducers";
+// import { addNote } from "../ducks/NewNote/actions";
+
+import CounterBox from "../components/useContext_Sample";
 
 const styles = {
   title: css`
     color: #3da9fc;
-    font-size: 2.4rem;
+    font-size: 2.2rem;
     text-decoration: none;
     transition: all 0.25s ease-in-out 0s;
   `,
@@ -21,7 +27,6 @@ const styles = {
     background-color: #f1f1f1;
     padding: 30px;
   `,
-
   reduxBox: css`
     background-color: #ccc;
     margin-top: 20px;
@@ -51,11 +56,6 @@ export default function About() {
       </Head>
 
       <div css={styles.reduxBox}>
-        {/* Redux */}
-        <h2>Redux練習</h2>
-        <Counter />
-        <br />
-
         <Link href="/about">
           <a>About Page</a>
         </Link>
@@ -70,6 +70,12 @@ export default function About() {
       <GlobalMenus />
 
       <main>
+        <h2>Reduxの練習</h2>
+        {/* Reduxサンプル CounterBox */}
+        <CounterBox />
+        <br />
+        <br />
+
         <div css={styles.contentsBox}>
           <TextContentsAria title={"About"} textContents={textContents} />
 

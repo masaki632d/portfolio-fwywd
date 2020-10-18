@@ -3,7 +3,7 @@ import React, { FC } from "react";
 import { css, jsx } from "@emotion/core";
 
 const styles = css`
-  font-size: 2rem;
+  font-size: 1.4rem;
   font-weight: bold;
   margin-bottom: 1rem;
 `;
