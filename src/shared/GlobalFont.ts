@@ -1,0 +1,18 @@
+export const GlobalFont = {
+  Rem40: '4rem',
+  Rem36: '3.6rem',
+  Rem30: '3.0rem',
+  Rem28: '2.8rem',
+  Rem26: '2.6rem',
+  Rem24: '2.4rem',
+  Rem22: '2.2rem',
+  Rem20: '2.0rem',
+  Rem18: '1.8rem',
+  Rem16: '1.6rem',
+  Rem15: '1.5rem',
+  Rem14: '1.4rem',
+  Rem13: '1.3rem',
+  Rem12: '1.2rem',
+  Rem11: '1.1rem',
+  Rem10: '1.0rem',
+}

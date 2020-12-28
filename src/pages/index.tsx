@@ -1,55 +1,27 @@
 /** @jsx jsx */
-import React, { FC, Fragment } from "react";
-import { css, jsx } from "@emotion/core";
+import { FC, Fragment } from "react";
+import { jsx } from "@emotion/core";
 import Head from "next/head";
+import Link from "next/link";
 
+import { styles } from "./Styled";
+
+import ListContents from "../components/molecules/ListContents";
+import GlobalMenus from "../components/molecules/GlobalMenus";
+
+import MainTitle from "../components/atoms/MainTitle";
+import SubTitle from "../components/atoms/SubTitle";
+
+import { useInView, InView } from "react-intersection-observer";
+
+// Redux関連
 import { useSelector, useDispatch } from "react-redux";
 // import { NewNoteProvider } from "../context/NewNote";
-
 // import { NewNote } from "../components/organisms/NewNote";
 // import CounterBox from "../components/useContext_Sample";
 
 import { CounterProvider } from "../contexts/Counter";
 import { Counter } from "../components/organisms/Counter";
-
-import ListContents from "../components/molecules/ListContents";
-import GlobalMenus from "../components/molecules/GlobalMenus";
-import MainTitle from "../components/atoms/MainTitle";
-import SubTitle from "../components/atoms/SubTitle";
-
-import Link from "next/link";
-
-const styles = {
-  title: css`
-    color: #333;
-    font-size: 1rem;
-    padding: 0 15px;
-    text-decoration: none;
-    transition: all 0.25s ease-in-out 0s;
-    :hover {
-      opacity: 0.7;
-    }
-  `,
-  contentsBox: css`
-    width: 960px;
-    background-color: #f1f1f1;
-    padding: 30px;
-    margin: 0 auto;
-  `,
-  contentWrap: css`
-    width: 960px;
-    padding: 30px;
-    margin: 0 auto;
-  `,
-  reduxBox: css`
-    background-color: #ccc;
-    margin-top: 20px;
-    padding: 30px;
-    h2 {
-      margin-bottom: 20px;
-    }
-  `,
-};
 
 const ruleText = [
   "なるべくTypescriptで記述する",
@@ -72,20 +44,18 @@ const todoText = [
 const reviewText = ["20200701：●●を修正"];
 
 const index: FC = () => {
-  // const notes = useSelector<NewNoteState, NewNoteState["notes"]>(
-  //   (state) => state.notes
-  // );
-  // const dispatch = useDispatch();
+  // const [ref, inView] = useInView({
+  //   rootMargin: "-50px 0px",
+  // });
 
-  // const onAddNote = (note: string) => {
-  //   dispatch(onAddNote(note));
-  // };
+  const [ref, inView] = useInView({
+    rootMargin: "10px",
+    threshold: 0,
+  });
 
   return (
     <Fragment>
       <Head>
-        {/* <NewNoteProvider> */}
-
         <title key="title">トップ</title>
         <link rel="icon" href="/favicon.ico" />
       </Head>
@@ -96,6 +66,7 @@ const index: FC = () => {
         </a>
       </h1>
 
+      {/* グローバルメニュー */}
       <GlobalMenus />
 
       <main>
@@ -104,6 +75,13 @@ const index: FC = () => {
 
           <SubTitle text={"作成ルール　メモ"} />
           <ListContents listContents={ruleText} />
+
+          {/* <span
+            className="nit__marker yellow show"
+            css={[styles.yellow, styles.show]}
+          >
+            審査時間は最短30分のため、どんなに遅くても20:30までには審査申込をする必要があります。
+          </span> */}
 
           <SubTitle text={"レビュー内容"} />
           <ListContents listContents={reviewText} />
@@ -126,9 +104,9 @@ const index: FC = () => {
           </ul> */}
 
           {/* Reduxサンプル CounterBox */}
-          <CounterProvider>
+          {/* <CounterProvider>
             <Counter />
-          </CounterProvider>
+          </CounterProvider> */}
         </div>
 
         <div css={styles.reduxBox}>
@@ -136,6 +114,84 @@ const index: FC = () => {
             <a>About Page</a>
           </Link>
         </div>
+
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+
+        <p ref={ref} css={[styles.yellow, inView && styles.show]}>
+          テキストテキスト
+        </p>
+
+        {/* <div ref={ref}>
+          <h2>{`Header inside viewport ${inView}.`}</h2>
+        </div> */}
+
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
       </main>
       {/* </NewNoteProvider> */}
     </Fragment>

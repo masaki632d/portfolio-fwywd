@@ -1,5 +1,4 @@
 import { Record } from "immutable";
-// immutableは何をしてくれるもの？
 
 // store.tsは必要ない？
 // Modelはtsx（マネップ）の場合どこにいったのか？

@@ -281,3 +281,36 @@ svg:not([fill]) {
 [aria-disabled] {
   cursor: default;
 }
+
+/* マーカー */
+.nit__maker {
+  font-weight: 700;
+  background-repeat: no-repeat;
+  background-position: 200% 0;
+  background-size: 200% 100%;
+  transition: 3s;
+}
+
+.nit__show {
+  background-position: 100% 0;
+}
+
+.nit__show-add a {
+  -webkit-animation: blink 1.5s ease-in-out infinite alternate;
+  animation: blink 1.5s ease-in-out infinite alternate;
+}
+
+animation: SlideIn 5s;
+@keyframes SlideIn {
+  from {
+    transform: translateX(100%);
+    background-repeat: no-repeat;
+    background-position: 200% 0;
+    background-size: 200% 100%;
+    transition: 5s;
+  }
+  to {
+    transform: translateX(0);
+    background-position: 100% 0;
+  }
+}
