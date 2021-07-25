@@ -12,13 +12,21 @@ export default function Home() {
       </Head>
 
       <main className={styles.main}>
-        <h1 className={styles.title}>
-          Welcome to <a href="https://nextjs.org">Next.js!</a>
+        <p className="pt-3 font-bold text-red-100">あああ</p>
+
+        <h1 className="m-0 text-5xl leading-tight">
+          Welcome to
+          <a
+            href="https://nextjs.org"
+            className="font-bold text-red-400 underline hover:opacity-80"
+          >
+            Next.js with TailwindCSS!
+          </a>
         </h1>
 
         <p className={styles.description}>
-          Get started by editing{' '}
-          <code className={styles.code}>pages/index.js</code>
+          Get started by editing
+          <code className={styles.code}>pages/index.tsx</code>
         </p>
 
         <div className={styles.grid}>
@@ -52,13 +60,20 @@ export default function Home() {
         </div>
       </main>
 
+      <a
+        href="https://nextjs.org"
+        className="font-bold text-red-400 md:text-green-400 underline hover:opacity-80"
+      >
+        あああ
+      </a>
+
       <footer className={styles.footer}>
         <a
           href="https://vercel.com?utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
           target="_blank"
           rel="noopener noreferrer"
         >
-          Powered by{' '}
+          Powered by
           <span className={styles.logo}>
             <Image src="/vercel.svg" alt="Vercel Logo" width={72} height={16} />
           </span>
