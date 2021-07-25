@@ -12,8 +12,6 @@ export default function Home() {
       </Head>
 
       <main className={styles.main}>
-        <p className="pt-3 font-bold text-red-100">あああ</p>
-
         <h1 className="m-0 text-5xl leading-tight">
           Welcome to
           <a
@@ -59,13 +57,6 @@ export default function Home() {
           </a>
         </div>
       </main>
-
-      <a
-        href="https://nextjs.org"
-        className="font-bold text-red-400 md:text-green-400 underline hover:opacity-80"
-      >
-        あああ
-      </a>
 
       <footer className={styles.footer}>
         <a
