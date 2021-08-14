@@ -1,13 +1,12 @@
-/* @jsx jsx */
-import React, { FC } from "react";
-import { css, jsx } from "@emotion/core";
+import React, { FC } from 'react'
+import { css } from '@emotion/react'
 
 const styles = css`
   background-color: #f7fafc;
-`;
+`
 
 interface TableContentProps {
-  tableContent: any;
+  tableContent: any
 }
 
 const TableContent: FC<TableContentProps> = ({ tableContent }) => (
@@ -15,6 +14,6 @@ const TableContent: FC<TableContentProps> = ({ tableContent }) => (
     <td className="p-3 text-center">{tableContent.td1}</td>
     <td className="p-3 text-left">{tableContent.td2}</td>
   </tr>
-);
+)
 
-export default TableContent;
+export default TableContent

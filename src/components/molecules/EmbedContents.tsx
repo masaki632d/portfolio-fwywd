@@ -1,11 +1,10 @@
-/* @jsx jsx */
-import React, { FC } from "react";
-import { css, jsx } from "@emotion/core";
-import SubTitle from "../atoms/SubTitle";
+import React, { FC } from 'react'
+import { css } from '@emotion/react'
+import SubTitle from '../atoms/SubTitle'
 
 const contentsBox = css`
   margin: 0 20px 30px;
-`;
+`
 
 const textStyles = {
   box: css`
@@ -18,7 +17,7 @@ const textStyles = {
   text: css`
     margin-bottom: 1rem;
   `,
-};
+}
 
 const embedContent = css`
   width: 70%;
@@ -27,10 +26,10 @@ const embedContent = css`
   @media (max-width: 639px) {
     width: 95%;
   }
-`;
+`
 
 interface EmbedContentsProps {
-  textContents: any;
+  textContents: any
 }
 
 const EmbedContents: FC<EmbedContentsProps> = ({ textContents }) => (
@@ -63,9 +62,9 @@ const EmbedContents: FC<EmbedContentsProps> = ({ textContents }) => (
             </div>
           )}
         </div>
-      );
+      )
     })}
   </div>
-);
+)
 
-export default EmbedContents;
+export default EmbedContents

@@ -1,5 +1,4 @@
-/** @jsx jsx */
-import { Global, jsx, css } from '@emotion/core'
+import { Global, css } from '@emotion/core'
 
 // グローバルCSS
 const styles = css`

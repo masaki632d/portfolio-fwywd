@@ -1,14 +1,13 @@
-/* @jsx jsx */
-import React, { FC, useState, useMemo, useEffect } from "react";
-import Head from "next/head";
-import { css, jsx } from "@emotion/core";
+import React, { FC, useState, useMemo, useEffect } from 'react'
+import Head from 'next/head'
+import { css } from '@emotion/react'
 
-import ListContents from "../components/molecules/ListContents";
-import SortContents from "../components/molecules/SortContents";
-import GlobalMenus from "../components/molecules/GlobalMenus";
-import MainTitle from "../components/atoms/MainTitle";
-import SubTitle from "../components/atoms/SubTitle";
-import SortButton from "../components/atoms/SortButton";
+import ListContents from '../components/molecules/ListContents'
+import SortContents from '../components/molecules/SortContents'
+import GlobalMenus from '../components/molecules/GlobalMenus'
+import MainTitle from '../components/atoms/MainTitle'
+import SubTitle from '../components/atoms/SubTitle'
+import SortButton from '../components/atoms/SortButton'
 
 const styles = {
   box2: css`
@@ -23,92 +22,92 @@ const styles = {
     margin-left: 1.5rem;
     font-size: 1rem;
   `,
-};
+}
 
 export default function Qualification() {
   const canList = [
-    "サイト情報設計",
-    "ディレクション・スケジュール管理",
-    "テキスト",
-  ];
+    'サイト情報設計',
+    'ディレクション・スケジュール管理',
+    'テキスト',
+  ]
   const skillInfo = {
     skillList: [
       {
         id: 1,
-        text: "HTML, CSS",
-        image: "icon_css3.svg",
+        text: 'HTML, CSS',
+        image: 'icon_css3.svg',
         level: 1,
       },
       {
         id: 2,
-        text: "Sass",
-        image: "icon_sass.svg",
+        text: 'Sass',
+        image: 'icon_sass.svg',
         level: 3,
       },
       {
         id: 3,
-        text: "Bootstrap",
-        image: "icon_bootstrap.svg",
+        text: 'Bootstrap',
+        image: 'icon_bootstrap.svg',
         level: 4,
       },
       {
         id: 4,
-        text: "Javascript",
-        image: "icon_javascript.svg",
+        text: 'Javascript',
+        image: 'icon_javascript.svg',
         level: 3,
       },
       {
         id: 5,
-        text: "jQuery",
-        image: "icon_jquery.svg",
+        text: 'jQuery',
+        image: 'icon_jquery.svg',
         level: 2,
       },
       {
         id: 6,
-        text: "React",
-        image: "icon_react.svg",
+        text: 'React',
+        image: 'icon_react.svg',
         level: 3,
       },
       {
         id: 7,
-        text: "WordPress",
-        image: "icon_wordpress.svg",
+        text: 'WordPress',
+        image: 'icon_wordpress.svg',
         level: 4,
       },
       {
         id: 8,
-        text: "Git",
-        image: "icon_git.svg",
+        text: 'Git',
+        image: 'icon_git.svg',
         level: 2,
       },
       {
         id: 9,
-        text: "Design",
-        image: "icon_design.svg",
+        text: 'Design',
+        image: 'icon_design.svg',
         level: 4,
       },
       {
         id: 10,
-        text: "Prototype",
-        image: "icon_prototype.svg",
+        text: 'Prototype',
+        image: 'icon_prototype.svg',
         level: 3,
       },
       {
         id: 11,
-        text: "LPO",
-        image: "icon_lpo.svg",
+        text: 'LPO',
+        image: 'icon_lpo.svg',
         level: 3,
       },
       {
         id: 12,
-        text: "UX",
-        image: "icon_ux.svg",
+        text: 'UX',
+        image: 'icon_ux.svg',
         level: 3,
       },
       {
         id: 13,
-        text: "Direction",
-        image: "icon_direction.svg",
+        text: 'Direction',
+        image: 'icon_direction.svg',
         level: 2,
       },
     ],
@@ -116,14 +115,14 @@ export default function Qualification() {
     toolList: [
       {
         id: 1,
-        text: "Adobe XD",
-        image: "icon_xd.svg",
+        text: 'Adobe XD',
+        image: 'icon_xd.svg',
         level: 3,
       },
       {
         id: 2,
-        text: "Adobe Photoshop",
-        image: "icon_photoshop.svg",
+        text: 'Adobe Photoshop',
+        image: 'icon_photoshop.svg',
         level: 3,
       },
     ],
@@ -131,71 +130,71 @@ export default function Qualification() {
     level: [
       {
         id: 1,
-        text: "very high",
-        color: "#DD6677",
+        text: 'very high',
+        color: '#DD6677',
       },
       {
         id: 2,
-        text: "high",
-        color: "#DE9066",
+        text: 'high',
+        color: '#DE9066',
       },
       {
         id: 3,
-        text: "normal",
-        color: "#66B4DE",
+        text: 'normal',
+        color: '#66B4DE',
       },
       {
         id: 4,
-        text: "low",
-        color: "#539946",
+        text: 'low',
+        color: '#539946',
       },
     ],
-  };
+  }
 
-  const [sort, setSort] = useState({});
-  const [sortkey, setSortkey] = useState("ID");
-  const keys = ["id", "level"];
+  const [sort, setSort] = useState({})
+  const [sortkey, setSortkey] = useState('ID')
+  const keys = ['id', 'level']
 
   // 並び替えボタンがクリック
   const handleSort = (key) => {
     if (sort.key === key) {
       // 直前と同じボタンをクリック（keyは同じで反転）
-      setSort({ ...sort, order: -sort.order });
+      setSort({ ...sort, order: -sort.order })
     } else {
       // 直前とは異なるボタンをクリック（新しいkeyで降順）
       setSort({
         key: key,
         order: 1,
-      });
+      })
     }
-  };
+  }
 
   // sort結果に変化があった場合、メソッドの返り値を格納
   useMemo(() => {
     // 参照代入
-    let list = skillInfo.skillList;
+    let list = skillInfo.skillList
     if (sort.key) {
       list = list.sort((a, b) => {
-        a = a[sort.key];
-        b = b[sort.key];
+        a = a[sort.key]
+        b = b[sort.key]
 
         if (a === b) {
-          return 0;
+          return 0
         }
         if (a > b) {
-          return 1 * sort.order;
+          return 1 * sort.order
         }
         if (a < b) {
-          return -1 * sort.order;
+          return -1 * sort.order
         }
-      });
+      })
     }
-  }, [skillInfo.skillList]);
+  }, [skillInfo.skillList])
 
   // 無限ループを防ぐために Hooks のトリガーを上記と分ける
   useEffect(() => {
-    setSortkey(sort.key);
-  }, [skillInfo.skillList]);
+    setSortkey(sort.key)
+  }, [skillInfo.skillList])
 
   return (
     <div>
@@ -206,20 +205,20 @@ export default function Qualification() {
       <GlobalMenus />
 
       <main>
-        <MainTitle text={"Skill"} />
+        <MainTitle text={'Skill'} />
 
         <section css={styles.box2}>
-          <SubTitle text={"私ができること"} />
+          <SubTitle text={'私ができること'} />
           <ListContents listContents={canList} />
         </section>
 
         <section css={styles.box2}>
-          <SubTitle text={"skill"} />
+          <SubTitle text={'skill'} />
           <div css={styles.box}>
             {keys.map((key, index) => (
               <SortButton key={index} text={key} handleSort={handleSort} />
             ))}
-            <p css={styles.text}>表示順：{sortkey || "ID"}</p>
+            <p css={styles.text}>表示順：{sortkey || 'ID'}</p>
           </div>
           <SortContents
             sortContents={skillInfo.skillList}
@@ -228,7 +227,7 @@ export default function Qualification() {
         </section>
 
         <section css={styles.box2}>
-          <SubTitle text={"tool"} />
+          <SubTitle text={'tool'} />
           <SortContents
             sortContents={skillInfo.toolList}
             levels={skillInfo.level}
@@ -236,5 +235,5 @@ export default function Qualification() {
         </section>
       </main>
     </div>
-  );
+  )
 }

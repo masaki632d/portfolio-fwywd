@@ -1,6 +1,5 @@
-/* @jsx jsx */
-import React, { FC } from "react";
-import { css, jsx } from "@emotion/core";
+import React, { FC } from 'react'
+import { css } from '@emotion/react'
 
 const styles = css`
   margin: 0.5rem 0.8rem;
@@ -14,17 +13,17 @@ const styles = css`
     transform: translate(0px, -3px);
     transition: all 0.3s ease;
   }
-`;
+`
 
 interface SortButtonProps {
-  text: string;
-  handleSort: any;
+  text: string
+  handleSort: any
 }
 
 const SortButton: FC<SortButtonProps> = ({ text, handleSort }) => (
   <button css={styles} onClick={() => handleSort(text)}>
     {text.toUpperCase()} sort
   </button>
-);
+)
 
-export default SortButton;
+export default SortButton

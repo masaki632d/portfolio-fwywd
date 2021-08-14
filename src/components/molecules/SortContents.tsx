@@ -1,6 +1,5 @@
-/* @jsx jsx */
-import React, { FC } from "react";
-import { css, jsx } from "@emotion/core";
+import React, { FC } from 'react'
+import { css } from '@emotion/react'
 
 const styles = {
   box: css`
@@ -21,17 +20,17 @@ const styles = {
   title: css`
     font-weight: bold;
   `,
-};
+}
 
 interface SortContentsProps {
-  sortContents: any;
-  levels: any;
+  sortContents: any
+  levels: any
 }
 
 const SortContents: FC<SortContentsProps> = ({ sortContents, levels }) => {
-  let levelStr = "";
-  let levelColor = "";
-  let image_url = "";
+  let levelStr = ''
+  let levelColor = ''
+  let image_url = ''
 
   return (
     <ul css={styles.box}>
@@ -39,21 +38,21 @@ const SortContents: FC<SortContentsProps> = ({ sortContents, levels }) => {
         // level表記をテキストに置き換え
         levels.map((level) => {
           if (sortContent.level === level.id) {
-            levelStr = level.text;
-            levelColor = level.color;
+            levelStr = level.text
+            levelColor = level.color
           }
-        });
-        image_url = `/images/skill/${sortContent.image}`;
+        })
+        image_url = `/images/skill/${sortContent.image}`
         return (
           <li css={styles.list} key={sortContent.id}>
             <img src={image_url} />
             <p css={styles.title}>{sortContent.text}</p>
             <p>{levelStr}</p>
           </li>
-        );
+        )
       })}
     </ul>
-  );
-};
+  )
+}
 
-export default SortContents;
+export default SortContents

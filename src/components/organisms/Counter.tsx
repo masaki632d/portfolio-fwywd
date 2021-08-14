@@ -1,10 +1,7 @@
-/* @jsx jsx */
-
-import React, { FC, useContext } from "react";
-import { jsx } from "@emotion/core";
+import React, { FC, useContext } from 'react'
 
 // import { counterActions } from "../../ducks/Counter";
-import { CounterContext } from "../../contexts/Counter";
+import { CounterContext } from '../../contexts/Counter'
 
 // NewNoteContext.tsxを参考に？
 // ここを修正
@@ -16,7 +13,7 @@ import { CounterContext } from "../../contexts/Counter";
 // increment: counterActions.increment(dispatch),
 
 export const Counter: FC = () => {
-  const { state, actions } = useContext(CounterContext);
+  const { state, actions } = useContext(CounterContext)
 
   // マネップの書き方じゃない　ぶつかってるのでどっちかに揃える必要
   return (
@@ -25,7 +22,7 @@ export const Counter: FC = () => {
       <div>
         <button
           onClick={() => {
-            actions.increment;
+            actions.increment
           }}
         >
           +
@@ -33,5 +30,5 @@ export const Counter: FC = () => {
         <button onClick={() => actions.decrement}>-</button>
       </div>
     </div>
-  );
-};
+  )
+}

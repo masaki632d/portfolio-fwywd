@@ -1,8 +1,7 @@
-/* @jsx jsx */
-import React, { FC, useState, useCallback } from "react";
-import { css, jsx } from "@emotion/core";
+import React, { FC, useState, useCallback } from 'react'
+import { css } from '@emotion/react'
 
-import GlobalMenus from "../components/molecules/GlobalMenus";
+import GlobalMenus from '../components/molecules/GlobalMenus'
 
 const styles = {
   title: css`
@@ -15,17 +14,17 @@ const styles = {
     background-color: #f1f1f1;
     padding: 30px;
   `,
-};
+}
 
 const UseCallback: FC = () => {
-  const [count, setCount] = useState(0);
+  const [count, setCount] = useState(0)
   const newValue = useCallback(() => {
-    console.log("Don't you forget?", count);
+    console.log("Don't you forget?", count)
 
-    return `${count}　push`;
-  }, [Math.floor(count / 3)]);
+    return `${count}　push`
+  }, [Math.floor(count / 3)])
 
-  console.log(newValue());
+  console.log(newValue())
 
   return (
     <>
@@ -48,18 +47,18 @@ const UseCallback: FC = () => {
           <div>
             <button
               onClick={() => {
-                setCount(count + 1);
+                setCount(count + 1)
               }}
             >
               ここをクリック!
             </button>
             <br />
-            {"<"} {count} 回
+            {'<'} {count} 回
           </div>
         </div>
       </main>
     </>
-  );
-};
+  )
+}
 
-export default UseCallback;
+export default UseCallback

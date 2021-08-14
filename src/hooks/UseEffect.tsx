@@ -1,8 +1,7 @@
-/* @jsx jsx */
-import React, { FC, useState, useEffect } from "react";
-import { css, jsx } from "@emotion/core";
+import React, { FC, useState, useEffect } from 'react'
+import { css } from '@emotion/react'
 
-import GlobalMenus from "../components/molecules/GlobalMenus";
+import GlobalMenus from '../components/molecules/GlobalMenus'
 
 const styles = {
   title: css`
@@ -15,21 +14,21 @@ const styles = {
     background-color: #f1f1f1;
     padding: 30px;
   `,
-};
+}
 
 const Sub = (props) => {
-  const { count, hello } = props;
+  const { count, hello } = props
 
   useEffect(() => {
-    console.log("------", count);
-  }, [hello, count]);
+    console.log('------', count)
+  }, [hello, count])
 
-  return <div>{count}</div>;
-};
+  return <div>{count}</div>
+}
 
 const UseEffect: FC = () => {
-  const [a, b] = useState(0);
-  const [_a, _b] = useState("!");
+  const [a, b] = useState(0)
+  const [_a, _b] = useState('!')
 
   return (
     <>
@@ -51,28 +50,28 @@ const UseEffect: FC = () => {
             <Sub count={a} hello={_a} />
             <button
               onClick={() => {
-                b(a + 1);
+                b(a + 1)
               }}
             >
               ここをクリック!
             </button>
-            {"<"} {a}times!!
+            {'<'} {a}times!!
             <br />
             <button
               onClick={() => {
-                _b(`${_a}!`);
+                _b(`${_a}!`)
               }}
             >
               <br />
               ここをクリック!
             </button>
             <br />
-            {"<"} hello{_a}
+            {'<'} hello{_a}
           </div>
         </div>
       </main>
     </>
-  );
-};
+  )
+}
 
-export default UseEffect;
+export default UseEffect

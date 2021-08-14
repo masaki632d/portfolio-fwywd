@@ -1,6 +1,5 @@
-/* @jsx jsx */
-import React, { FC } from "react";
-import { css, jsx } from "@emotion/core";
+import React, { FC } from 'react'
+import { css } from '@emotion/react'
 
 const styles = css`
   margin: 0.5rem 0.8rem;
@@ -16,18 +15,18 @@ const styles = css`
     transform: translate(0px, -3px);
     transition: all 0.3s ease;
   }
-`;
+`
 
 interface BasicButtonProps {
-  text: string;
-  href: string;
-  target: string;
+  text: string
+  href: string
+  target: string
 }
 
 export const BasicButton: FC<BasicButtonProps> = ({ text, href, target }) => (
   <a css={styles} href={href} target={target}>
     {text}
   </a>
-);
+)
 
-export default BasicButton;
+export default BasicButton

@@ -1,8 +1,7 @@
-/* @jsx jsx */
-import React, { FC, useState, useMemo } from "react";
-import { css, jsx } from "@emotion/core";
+import React, { FC, useState, useMemo } from 'react'
+import { css } from '@emotion/react'
 
-import GlobalMenus from "../components/molecules/GlobalMenus";
+import GlobalMenus from '../components/molecules/GlobalMenus'
 
 const styles = {
   title: css`
@@ -15,17 +14,17 @@ const styles = {
     background-color: #f1f1f1;
     padding: 30px;
   `,
-};
+}
 
 const UseMemo: FC = () => {
-  const [count, setCount] = useState(0);
+  const [count, setCount] = useState(0)
   const newValue = useMemo(() => {
-    console.log("Don't you forget?", count);
+    console.log("Don't you forget?", count)
 
-    return `${count}　push`;
-  }, [count]);
+    return `${count}　push`
+  }, [count])
 
-  console.log(newValue);
+  console.log(newValue)
 
   return (
     <>
@@ -49,18 +48,18 @@ const UseMemo: FC = () => {
           <div>
             <button
               onClick={() => {
-                setCount(count + 1);
+                setCount(count + 1)
               }}
             >
               ここをクリック!
             </button>
             <br />
-            {"<"} {count} times!
+            {'<'} {count} times!
           </div>
         </div>
       </main>
     </>
-  );
-};
+  )
+}
 
-export default UseMemo;
+export default UseMemo

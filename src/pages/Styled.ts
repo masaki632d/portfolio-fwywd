@@ -1,4 +1,4 @@
-import { css } from "@emotion/core";
+import { css } from '@emotion/react'
 
 export const styles = {
   title: css`
@@ -56,4 +56,4 @@ export const styles = {
 
     transform: translateY(-10px);
   `,
-};
+}

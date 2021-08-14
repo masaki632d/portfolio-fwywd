@@ -1,7 +1,6 @@
-/* @jsx jsx */
-import React, { FC } from "react";
-import SubTitle from "../atoms/SubTitle";
-import { css, jsx } from "@emotion/core";
+import React, { FC } from 'react'
+import SubTitle from '../atoms/SubTitle'
+import { css } from '@emotion/react'
 
 const styles = {
   contentsBox: css`
@@ -17,17 +16,17 @@ const styles = {
   text: css`
     margin-bottom: 15px;
   `,
-};
+}
 
 interface DefinitionContentsProps {
-  dlContents: any;
+  dlContents: any
 }
 
 const DefinitionContents: FC<DefinitionContentsProps> = ({ dlContents }) => {
-  let image_url = "";
+  let image_url = ''
 
   return dlContents.map((dlContent, index) => {
-    image_url = `/images/production/${dlContent.image}`;
+    image_url = `/images/production/${dlContent.image}`
 
     return (
       <div key={index} css={styles.contentsBox}>
@@ -60,8 +59,8 @@ const DefinitionContents: FC<DefinitionContentsProps> = ({ dlContents }) => {
           {dlContent.image && <img src={image_url} />}
         </dl>
       </div>
-    );
-  });
-};
+    )
+  })
+}
 
-export default DefinitionContents;
+export default DefinitionContents

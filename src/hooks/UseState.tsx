@@ -1,8 +1,7 @@
-/* @jsx jsx */
-import React, { FC, useState } from "react";
-import { css, jsx } from "@emotion/core";
+import React, { FC, useState } from 'react'
+import { css } from '@emotion/react'
 
-import GlobalMenus from "../components/molecules/GlobalMenus";
+import GlobalMenus from '../components/molecules/GlobalMenus'
 
 const styles = {
   title: css`
@@ -15,11 +14,11 @@ const styles = {
     background-color: #f1f1f1;
     padding: 30px;
   `,
-};
+}
 
 const UseState: FC = () => {
-  const [a, b] = useState(0);
-  const [_a, _b] = useState("!");
+  const [a, b] = useState(0)
+  const [_a, _b] = useState('!')
 
   return (
     <>
@@ -43,7 +42,7 @@ const UseState: FC = () => {
           <div>
             <button
               onClick={() => {
-                b(a + 1);
+                b(a + 1)
               }}
             >
               ここをクリック!
@@ -54,7 +53,7 @@ const UseState: FC = () => {
             <br />
             <button
               onClick={() => {
-                _b(`${_a}!`);
+                _b(`${_a}!`)
               }}
             >
               ここをクリック!
@@ -65,7 +64,7 @@ const UseState: FC = () => {
         </div>
       </main>
     </>
-  );
-};
+  )
+}
 
-export default UseState;
+export default UseState

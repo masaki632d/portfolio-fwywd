@@ -1,4 +1,4 @@
-import * as types from "./types";
+import * as types from './types'
 
 // export interface NewNoteState {
 //   notes: string[];
@@ -6,7 +6,7 @@ import * as types from "./types";
 
 export const initialState: types.NewNoteState = {
   notes: [],
-};
+}
 
 export default (
   state = initialState,
@@ -18,9 +18,9 @@ export default (
         ...state,
         notes: [...state.notes, action.payload],
         // notes: action.payload.notes,
-      };
+      }
     }
     default:
-      return state;
+      return state
   }
-};
+}

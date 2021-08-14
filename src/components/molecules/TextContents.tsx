@@ -1,7 +1,6 @@
-/* @jsx jsx */
-import React, { FC } from "react";
-import { css, jsx } from "@emotion/core";
-import SubTitle from "../atoms/SubTitle";
+import React, { FC } from 'react'
+import { css } from '@emotion/react'
+import SubTitle from '../atoms/SubTitle'
 
 const styles = {
   box: css`
@@ -10,10 +9,10 @@ const styles = {
   text: css`
     margin-bottom: 0.5rem;
   `,
-};
+}
 
 interface TextContentsProps {
-  textContents: any;
+  textContents: any
 }
 
 const TextContents: FC<TextContentsProps> = ({ textContents }) => {
@@ -46,8 +45,8 @@ const TextContents: FC<TextContentsProps> = ({ textContents }) => {
           />
         )}
       </div>
-    );
-  });
-};
+    )
+  })
+}
 
-export default TextContents;
+export default TextContents

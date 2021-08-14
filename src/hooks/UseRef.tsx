@@ -1,8 +1,7 @@
-/* @jsx jsx */
-import React, { FC, useState, useRef } from "react";
-import { css, jsx } from "@emotion/core";
+import React, { FC, useState, useRef } from 'react'
+import { css } from '@emotion/react'
 
-import GlobalMenus from "../components/molecules/GlobalMenus";
+import GlobalMenus from '../components/molecules/GlobalMenus'
 
 const styles = {
   title: css`
@@ -15,13 +14,13 @@ const styles = {
     background-color: #f1f1f1;
     padding: 30px;
   `,
-};
+}
 
 const UseRef: FC = () => {
-  const [count, setCount] = useState(0);
-  const buttonElement = useRef(null);
+  const [count, setCount] = useState(0)
+  const buttonElement = useRef(null)
 
-  console.log(buttonElement);
+  console.log(buttonElement)
 
   return (
     <>
@@ -46,18 +45,18 @@ const UseRef: FC = () => {
             <button
               ref={buttonElement}
               onClick={() => {
-                setCount(count + 1);
+                setCount(count + 1)
               }}
             >
               ここをクリック!
             </button>
             <br />
-            {"<"} {count} 回!
+            {'<'} {count} 回!
           </div>
         </div>
       </main>
     </>
-  );
-};
+  )
+}
 
-export default UseRef;
+export default UseRef

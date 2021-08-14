@@ -1,26 +1,26 @@
 // useContextとuseReducerを利用してグローバルにストアを利用する
 
-import React, { useReducer, createContext, useContext } from "react";
+import React, { useReducer, createContext, useContext } from 'react'
 
 // immutableを使ってる
 // Reducer Modelの概念
 // 使わないならオブジェクトで書くのも可能　typescriptでも使える
-import { Record } from "immutable";
+import { Record } from 'immutable'
 
 // -----------------------------------
 
 // Acttion定義
 // 依存なし
-const INCREMENT = "INCREMENT";
-const DECREMENT = "DECREMENT";
+const INCREMENT = 'INCREMENT'
+const DECREMENT = 'DECREMENT'
 // typesに入る
 
 const increment = (dispatch, value) => {
-  dispatch({ type: INCREMENT, num: value });
-};
+  dispatch({ type: INCREMENT, num: value })
+}
 const decrement = (dispatch, value) => {
-  dispatch({ type: DECREMENT, num: value });
-};
+  dispatch({ type: DECREMENT, num: value })
+}
 
 // -----------------------------------
 
@@ -29,13 +29,13 @@ const decrement = (dispatch, value) => {
 
 // storeに入る？　Modelディレクトリを作成する
 // this
-const CountRecord = Record({ count: 0 });
+const CountRecord = Record({ count: 0 })
 class CountModel extends CountRecord {
   increment(num = 1) {
-    return this.set("count", this.count + num);
+    return this.set('count', this.count + num)
   }
   decrement(num = 1) {
-    return this.set("count", this.count - num);
+    return this.set('count', this.count - num)
   }
 }
 
@@ -45,18 +45,18 @@ class CountModel extends CountRecord {
 // 依存：Model、ActionのType
 // initialState = 実体化
 // class（設計図）をインスタンス化（実体化　メモリ上に展開）する
-const initialState = new CountModel();
+const initialState = new CountModel()
 
 const reducer = (state = initialState, action) => {
   switch (action.type) {
     case INCREMENT:
-      return state.increment(action.num);
+      return state.increment(action.num)
     case DECREMENT:
-      return state.decrement(action.num);
+      return state.decrement(action.num)
     default:
-      return state;
+      return state
   }
-};
+}
 
 // -----------------------------------
 
@@ -64,22 +64,20 @@ const reducer = (state = initialState, action) => {
 // 依存：Reducer、ModelのinitialState
 
 // これをcontextとして書く
-const Store = createContext();
+const Store = createContext()
 
 // Provider定義
 const Provider = ({ children }) => {
-  const [state, dispatch] = useReducer(reducer, initialState);
-  return (
-    <Store.Provider value={{ state, dispatch }}>{children}</Store.Provider>
-  );
-};
+  const [state, dispatch] = useReducer(reducer, initialState)
+  return <Store.Provider value={{ state, dispatch }}>{children}</Store.Provider>
+}
 
 // -----------------------------------
 
 // 利用するコンテンツ
 // 依存：Store、Action
 const Counter = () => {
-  const { state, dispatch } = useContext(Store);
+  const { state, dispatch } = useContext(Store)
 
   return (
     <>
@@ -89,8 +87,8 @@ const Counter = () => {
         <button onClick={() => decrement(dispatch, 5)}> - </button>
       </div>
     </>
-  );
-};
+  )
+}
 
 // -----------------------------------
 
@@ -100,6 +98,6 @@ const CounterBox = () => (
   <Provider>
     <Counter />
   </Provider>
-);
+)
 
-export default CounterBox;
+export default CounterBox

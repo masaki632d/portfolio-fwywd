@@ -1,5 +1,5 @@
-import React from "react";
-import { sanitizeHtml } from "..//src/utils/SanitizeHtml";
+import React from 'react'
+import { sanitizeHtml } from '../../src/utils/SanitizeHtml'
 
 export const SanitizeHtml = ({ html }: { html?: string }) => {
   return (
@@ -8,5 +8,5 @@ export const SanitizeHtml = ({ html }: { html?: string }) => {
         <p dangerouslySetInnerHTML={{ __html: sanitizeHtml(html) }}></p>
       ) : null}
     </>
-  );
-};
+  )
+}

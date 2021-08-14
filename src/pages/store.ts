@@ -1,4 +1,4 @@
-import { createStore } from "redux";
-import Reducer from "../ducks/NewNote/reducers";
+import { createStore } from 'redux'
+import Reducer from '../ducks/NewNote/reducers'
 
-export const store = createStore(Reducer);
+export const store = createStore(Reducer)

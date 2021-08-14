@@ -1,8 +1,7 @@
-/* @jsx jsx */
-import React, { useContext, createContext, useState } from "react";
-import { css, jsx } from "@emotion/core";
+import React, { useContext, createContext, useState } from 'react'
+import { css } from '@emotion/react'
 
-import GlobalMenus from "../components/molecules/GlobalMenus";
+import GlobalMenus from '../components/molecules/GlobalMenus'
 
 const styles = {
   title: css`
@@ -15,13 +14,13 @@ const styles = {
     background-color: #f1f1f1;
     padding: 30px;
   `,
-};
+}
 
-const context = createContext();
-const { Provider } = context;
+const context = createContext()
+const { Provider } = context
 
 const Child = () => {
-  const count = useContext(context);
+  const count = useContext(context)
   return (
     <div>
       <span>{count.count}</span>
@@ -30,11 +29,11 @@ const Child = () => {
       <br />
       <button onClick={count.decrement}>-</button>
     </div>
-  );
-};
+  )
+}
 
 export default function UseContext() {
-  const [count, setCount] = useState(0);
+  const [count, setCount] = useState(0)
 
   return (
     <>
@@ -84,5 +83,5 @@ export default function UseContext() {
         </div>
       </main>
     </>
-  );
+  )
 }

@@ -1,47 +1,45 @@
-/** @jsx jsx */
-import { FC, Fragment } from "react";
-import { jsx } from "@emotion/core";
-import Head from "next/head";
-import Link from "next/link";
+import { FC, Fragment } from 'react'
+import Head from 'next/head'
+import Link from 'next/link'
 
-import { styles } from "./Styled";
+import { styles } from './Styled'
 
-import ListContents from "../components/molecules/ListContents";
-import GlobalMenus from "../components/molecules/GlobalMenus";
+import ListContents from '../components/molecules/ListContents'
+import GlobalMenus from '../components/molecules/GlobalMenus'
 
-import MainTitle from "../components/atoms/MainTitle";
-import SubTitle from "../components/atoms/SubTitle";
+import MainTitle from '../components/atoms/MainTitle'
+import SubTitle from '../components/atoms/SubTitle'
 
-import { useInView, InView } from "react-intersection-observer";
+import { useInView, InView } from 'react-intersection-observer'
 
 // Redux関連
-import { useSelector, useDispatch } from "react-redux";
+import { useSelector, useDispatch } from 'react-redux'
 // import { NewNoteProvider } from "../context/NewNote";
 // import { NewNote } from "../components/organisms/NewNote";
 // import CounterBox from "../components/useContext_Sample";
 
-import { CounterProvider } from "../contexts/Counter";
-import { Counter } from "../components/organisms/Counter";
+import { CounterProvider } from '../contexts/Counter'
+import { Counter } from '../components/organisms/Counter'
 
 const ruleText = [
-  "なるべくTypescriptで記述する",
-  "コンポーネント設計はAtomicDesignを踏襲",
-  "色やフォントサイズなどは共通化",
-];
+  'なるべくTypescriptで記述する',
+  'コンポーネント設計はAtomicDesignを踏襲',
+  '色やフォントサイズなどは共通化',
+]
 
 const doneText = [
-  "2020-06",
-  "emotion・TypeScriptの導入",
-  "Next.jsで別ページに遷移できるようにする",
-];
+  '2020-06',
+  'emotion・TypeScriptの導入',
+  'Next.jsで別ページに遷移できるようにする',
+]
 
 const todoText = [
-  "use●●を使ってみる",
-  "hooks参考記事：https://qiita.com/YutamaKotaro/items/ef0430f570779dcf8a26",
-  "Reduxサンプル作ってみる",
-];
+  'use●●を使ってみる',
+  'hooks参考記事：https://qiita.com/YutamaKotaro/items/ef0430f570779dcf8a26',
+  'Reduxサンプル作ってみる',
+]
 
-const reviewText = ["20200701：●●を修正"];
+const reviewText = ['20200701：●●を修正']
 
 const index: FC = () => {
   // const [ref, inView] = useInView({
@@ -49,9 +47,9 @@ const index: FC = () => {
   // });
 
   const [ref, inView] = useInView({
-    rootMargin: "10px",
+    rootMargin: '10px',
     threshold: 0,
-  });
+  })
 
   return (
     <Fragment>
@@ -71,9 +69,9 @@ const index: FC = () => {
 
       <main>
         <div css={styles.contentsBox}>
-          <MainTitle text={"トップページ"} />
+          <MainTitle text={'トップページ'} />
 
-          <SubTitle text={"作成ルール　メモ"} />
+          <SubTitle text={'作成ルール　メモ'} />
           <ListContents listContents={ruleText} />
 
           {/* <span
@@ -83,13 +81,13 @@ const index: FC = () => {
             審査時間は最短30分のため、どんなに遅くても20:30までには審査申込をする必要があります。
           </span> */}
 
-          <SubTitle text={"レビュー内容"} />
+          <SubTitle text={'レビュー内容'} />
           <ListContents listContents={reviewText} />
 
-          <SubTitle text={"完了タスク"} />
+          <SubTitle text={'完了タスク'} />
           <ListContents listContents={doneText} />
 
-          <SubTitle text={"次のタスク"} />
+          <SubTitle text={'次のタスク'} />
           <ListContents listContents={todoText} />
         </div>
 
@@ -195,7 +193,7 @@ const index: FC = () => {
       </main>
       {/* </NewNoteProvider> */}
     </Fragment>
-  );
-};
+  )
+}
 
-export default index;
+export default index

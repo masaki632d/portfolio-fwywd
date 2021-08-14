@@ -1,9 +1,9 @@
-import React, { FC } from "react";
+import React, { FC } from 'react'
 
-import TableContent from "../atoms/TableContent";
+import TableContent from '../atoms/TableContent'
 
 interface TableContentsProps {
-  tableContents: any;
+  tableContents: any
 }
 
 const TableContents = ({ tableContents }) => {
@@ -22,12 +22,12 @@ const TableContents = ({ tableContents }) => {
         </thead>
         <tbody className="text-gray-700">
           {tableContents.map((tableContent, index) => {
-            return <TableContent key={index} tableContent={tableContent} />;
+            return <TableContent key={index} tableContent={tableContent} />
           })}
         </tbody>
       </table>
     </div>
-  );
-};
+  )
+}
 
-export default TableContents;
+export default TableContents

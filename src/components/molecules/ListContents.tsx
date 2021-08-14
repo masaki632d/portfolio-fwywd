@@ -1,6 +1,5 @@
-/* @jsx jsx */
-import React, { FC } from "react";
-import { css, jsx } from "@emotion/core";
+import React, { FC } from 'react'
+import { css } from '@emotion/react'
 
 const styles = {
   box: css`
@@ -8,10 +7,10 @@ const styles = {
     margin-bottom: 2rem;
     padding-left: 1.5rem;
   `,
-};
+}
 
 interface ListContentsProps {
-  listContents: any;
+  listContents: any
 }
 
 const ListContents: FC<ListContentsProps> = ({ listContents }) => (
@@ -20,6 +19,6 @@ const ListContents: FC<ListContentsProps> = ({ listContents }) => (
       <li key={listContent}>{listContent}</li>
     ))}
   </ul>
-);
+)
 
-export default ListContents;
+export default ListContents

@@ -1,19 +1,16 @@
-/* @jsx jsx */
-import React, { FC } from "react";
-import { css, jsx } from "@emotion/core";
+import React, { FC } from 'react'
+import { css } from '@emotion/react'
 
 const styles = css`
   font-size: 2.2rem;
   font-weight: bold;
   margin-bottom: 2rem;
-`;
+`
 
 interface MainTitleProps {
-  text: string;
+  text: string
 }
 
-const MainTitle: FC<MainTitleProps> = ({ text }) => (
-  <h1 css={styles}>{text}</h1>
-);
+const MainTitle: FC<MainTitleProps> = ({ text }) => <h1 css={styles}>{text}</h1>
 
-export default MainTitle;
+export default MainTitle

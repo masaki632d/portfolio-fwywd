@@ -1,8 +1,7 @@
-/* @jsx jsx */
-import React, { FC, useState, useReducer } from "react";
-import { css, jsx } from "@emotion/core";
+import React, { FC, useState, useReducer } from 'react'
+import { css } from '@emotion/react'
 
-import GlobalMenus from "../components/molecules/GlobalMenus";
+import GlobalMenus from '../components/molecules/GlobalMenus'
 
 const styles = {
   title: css`
@@ -15,44 +14,44 @@ const styles = {
     background-color: #f1f1f1;
     padding: 30px;
   `,
-};
+}
 
 const initialState = {
   count: 0,
-};
+}
 
-const INCREMENT = "INCREMENT";
-const DECREMENT = "DECREMENT";
-const RESET = "RESET";
+const INCREMENT = 'INCREMENT'
+const DECREMENT = 'DECREMENT'
+const RESET = 'RESET'
 
 const reducer = (state, action) => {
-  const { type } = action;
-  const { count } = state;
+  const { type } = action
+  const { count } = state
 
   switch (type) {
     case INCREMENT:
       return {
         ...state,
         count: count + 1,
-      };
+      }
 
     case DECREMENT:
       return {
         ...state,
         count: count - 1,
-      };
+      }
 
     case RESET:
-      return initialState;
+      return initialState
 
     default:
-      return state;
+      return state
   }
-};
+}
 
 const UseReducer: FC = () => {
-  const [state, dispatch] = useReducer(reducer, initialState);
-  const { count } = state;
+  const [state, dispatch] = useReducer(reducer, initialState)
+  const { count } = state
 
   return (
     <>
@@ -90,7 +89,7 @@ const UseReducer: FC = () => {
           <div>
             <button
               onClick={() => {
-                dispatch({ type: INCREMENT });
+                dispatch({ type: INCREMENT })
               }}
             >
               add
@@ -98,7 +97,7 @@ const UseReducer: FC = () => {
             <br />
             <button
               onClick={() => {
-                dispatch({ type: DECREMENT });
+                dispatch({ type: DECREMENT })
               }}
             >
               del
@@ -106,19 +105,19 @@ const UseReducer: FC = () => {
             <br />
             <button
               onClick={() => {
-                dispatch({ type: RESET });
+                dispatch({ type: RESET })
               }}
             >
               reset
             </button>
             <br />
             <br />
-            {"<"} {count} 回クリック!
+            {'<'} {count} 回クリック!
           </div>
         </div>
       </main>
     </>
-  );
-};
+  )
+}
 
-export default UseReducer;
+export default UseReducer
