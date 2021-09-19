@@ -11,21 +11,32 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      <main className={styles.main}>
-        <h1 className="m-0 text-5xl leading-tight">
-          Welcome to
-          <a
-            href="https://nextjs.org"
-            className="font-bold text-red-400 underline hover:opacity-80"
-          >
-            Next.js with TailwindCSS!
-          </a>
-        </h1>
+      <header className="flex justify-between w-full">
+        <div className="header_left">
+          <Image src="/logo.png" alt="ロゴ画像" width="256" height="128" />
+        </div>
+        <div className="header_right">
+          <ul className="flex">
+            <li>ABOUT</li>
+            <li>SKILLS</li>
+            <li>VALUES</li>
+            <li>FUTURE</li>
+          </ul>
+        </div>
+      </header>
 
-        <p className={styles.description}>
-          Get started by editing
-          <code className={styles.code}>pages/index.tsx</code>
-        </p>
+      <main className={styles.main}>
+        <div className="">
+          <h1 className="m-0 text-4xl leading-tight">
+            <a
+              href="https://nextjs.org"
+              className="font-bold text-red-400 underline hover:opacity-80"
+            >
+              メインタイトル
+            </a>
+          </h1>
+          <p className="text-xl">サブタイトル</p>
+        </div>
 
         <div className={styles.grid}>
           <a href="https://nextjs.org/docs" className={styles.card}>
